@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pro DDM – Elite Fleet & Vehicle Detailing | Malamulele</title>
+<meta name="description" content="Precision cleaning for Cars, Taxis, and Heavy-Duty Trucks in Malamulele. Pro DDM delivers elite vehicle detailing 24/7." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+/* ── DESIGN TOKENS ───────────────────────────────────────────── */
+:root {
+  --black:    #080A0C;
+  --dark:     #0D1117;
+  --surface:  #13181F;
+  --card:     #181E27;
+  --border:   #232B36;
+  --steel:    #3A4553;
+  --mist:     #8899AA;
+  --light:    #C8D6E5;
+  --white:    #F0F4F8;
+  --lime:     #AAFF00;
+  --lime-dim: rgba(170,255,0,.15);
+  --lime-glow:rgba(170,255,0,.35);
+  --metal:    #B0BEC5;
+  --chrome:   linear-gradient(135deg,#C8D6E5 0%,#8899AA 50%,#C8D6E5 100%);
+
+  --display: 'Rajdhani', sans-serif;
+  --body:    'Exo 2', sans-serif;
+
+  --radius: 10px;
+  --shadow: 0 4px 32px rgba(0,0,0,.5);
+  --shadow-lime: 0 0 40px rgba(170,255,0,.12);
+}
+
+/* ── RESET ──────────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--body);background:var(--black);color:var(--light);line-height:1.65;overflow-x:hidden;}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+
+/* ── UTILITIES ───────────────────────────────────────────────── */
+.container{max-width:1140px;margin:0 auto;padding:0 28px;}
+.section{padding:96px 0;}
+
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--display);font-size:11px;letter-spacing:3px;
+  text-transform:uppercase;color:var(--lime);font-weight:600;
+  margin-bottom:14px;
+}
+.eyebrow::before{content:'';width:28px;height:2px;background:var(--lime);}
+
+h1,h2,h3,h4{font-family:var(--display);line-height:1.1;color:var(--white);}
+h1{font-size:clamp(2rem,5vw,3.8rem);font-weight:700;letter-spacing:-.5px;}
+h2{font-size:clamp(1.4rem,3vw,2.2rem);font-weight:700;}
+h3{font-size:1.15rem;font-weight:600;}
+
+/* ── BUTTONS ─────────────────────────────────────────────────── */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:16px 38px;border-radius:4px;
+  font-family:var(--display);font-size:.88rem;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;border:none;
+  transition:transform .18s,box-shadow .18s,background .18s;
+}
+.btn:hover{transform:translateY(-2px);}
+
+.btn--lime{
+  background:var(--lime);color:var(--black);
+  box-shadow:0 0 24px var(--lime-glow);
+}
+.btn--lime:hover{box-shadow:0 0 48px rgba(170,255,0,.55);background:#BBFF00;}
+
+.btn--ghost{
+  background:transparent;color:var(--lime);
+  border:1.5px solid var(--lime);
+}
+.btn--ghost:hover{background:var(--lime-dim);}
+
+.btn--steel{
+  background:var(--steel);color:var(--white);
+  border:1px solid var(--border);
+}
+.btn--steel:hover{background:#4A5568;box-shadow:var(--shadow);}
+
+.btn--wa{
+  background:#25D366;color:#fff;
+  box-shadow:0 0 24px rgba(37,211,102,.3);
+  width:100%;justify-content:center;font-size:1rem;margin-top:10px;
+}
+.btn--wa:hover{background:#20bf5b;box-shadow:0 0 48px rgba(37,211,102,.5);}
+
+/* ── NAV ─────────────────────────────────────────────────────── */
+nav{
+  position:fixed;top:0;width:100%;z-index:200;
+  background:rgba(8,10,12,.88);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+}
+.nav__inner{
+  display:flex;align-items:center;justify-content:space-between;
+  max-width:1140px;margin:0 auto;padding:0 28px;height:70px;
+}
+.nav__logo{
+  font-family:var(--display);font-weight:700;font-size:1.1rem;
+  color:var(--white);letter-spacing:2px;text-transform:uppercase;
+  display:flex;align-items:center;gap:8px;
+}
+.nav__logo .logo-mark{
+  width:36px;height:36px;border-radius:6px;
+  background:var(--lime);display:flex;align-items:center;justify-content:center;
+  color:var(--black);font-size:.95rem;font-weight:700;letter-spacing:0;
+}
+.nav__links{display:flex;gap:32px;list-style:none;}
+.nav__links a{
+  font-family:var(--display);font-size:.85rem;font-weight:600;
+  color:var(--mist);letter-spacing:1.5px;text-transform:uppercase;
+  transition:color .15s;
+}
+.nav__links a:hover{color:var(--lime);}
+.nav__badge{
+  background:var(--lime);color:var(--black);
+  font-family:var(--display);font-size:.75rem;font-weight:700;
+  padding:3px 10px;border-radius:2px;letter-spacing:1px;margin-left:4px;
+}
+
+/* ── HERO ─────────────────────────────────────────────────────── */
+.hero{
+  min-height:100vh;position:relative;
+  display:flex;align-items:center;
+  background:
+    linear-gradient(180deg, rgba(8,10,12,.25) 0%, rgba(8,10,12,.65) 50%, var(--black) 100%),
+    linear-gradient(105deg, #080A0C 0%, #0D1117 40%, #13181F 100%);
+  overflow:hidden;padding-top:70px;
+}
+
+/* Simulated industrial background texture */
+.hero__bg{
+  position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 40%, rgba(170,255,0,.07) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 80% at 10% 80%, rgba(58,69,83,.25) 0%, transparent 60%);
+}
+/* Grid lines */
+.hero__grid{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(170,255,0,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(170,255,0,.04) 1px, transparent 1px);
+  background-size:60px 60px;
+}
+/* Scan line animation */
+.hero__scan{
+  position:absolute;width:100%;height:2px;
+  background:linear-gradient(90deg,transparent,rgba(170,255,0,.4),transparent);
+  animation:scan 4s linear infinite;pointer-events:none;
+}
+@keyframes scan{
+  0%{top:-2px;opacity:0;}
+  5%{opacity:1;}
+  95%{opacity:1;}
+  100%{top:100%;opacity:0;}
+}
+
+/* Fake truck silhouette via CSS */
+.hero__truck{
+  position:absolute;right:-60px;bottom:0;width:65%;max-width:780px;
+  height:65%;pointer-events:none;
+  background:
+    radial-gradient(ellipse 60% 40% at 60% 80%, rgba(170,255,0,.06) 0%, transparent 70%);
+}
+.hero__truck::before{
+  content:'🚛';font-size:clamp(160px,22vw,320px);
+  position:absolute;bottom:0;right:40px;
+  filter:drop-shadow(0 0 60px rgba(170,255,0,.18)) brightness(.7) contrast(1.2);
+  line-height:1;
+}
+
+.hero__content{position:relative;z-index:2;max-width:680px;}
+.hero__status{
+  display:inline-flex;align-items:center;gap:10px;
+  border:1px solid var(--border);border-radius:2px;
+  padding:8px 18px;margin-bottom:32px;
+  font-family:var(--display);font-size:.78rem;letter-spacing:2px;
+  text-transform:uppercase;color:var(--mist);
+  background:rgba(13,17,23,.6);
+}
+.hero__status .pulse{
+  width:8px;height:8px;border-radius:50%;background:var(--lime);
+  box-shadow:0 0 8px var(--lime);flex-shrink:0;
+  animation:blink 1.6s ease-in-out infinite;
+}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
+
+.hero__title{color:var(--white);}
+.hero__title .pro{
+  color:var(--lime);
+  text-shadow:0 0 40px rgba(170,255,0,.45);
+}
+.hero__rule{
+  width:80px;height:3px;background:var(--lime);
+  margin:24px 0;box-shadow:0 0 12px var(--lime-glow);
+}
+.hero__sub{
+  font-size:.95rem;color:var(--mist);line-height:1.75;max-width:520px;
+}
+.hero__ctas{display:flex;gap:16px;margin-top:40px;flex-wrap:wrap;}
+
+.hero__metrics{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:0;margin-top:64px;border:1px solid var(--border);border-radius:4px;overflow:hidden;
+  max-width:480px;
+}
+.metric{
+  padding:20px 24px;border-right:1px solid var(--border);
+  background:rgba(13,17,23,.5);
+}
+.metric:last-child{border-right:none;}
+.metric__val{
+  font-family:var(--display);font-size:1.5rem;font-weight:700;
+  color:var(--lime);line-height:1;
+}
+.metric__label{font-size:.68rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--mist);margin-top:5px;}
+
+/* ── TICKER ──────────────────────────────────────────────────── */
+.ticker{
+  background:var(--lime);padding:10px 0;overflow:hidden;
+  border-top:none;border-bottom:none;
+}
+.ticker__track{
+  display:flex;gap:0;animation:ticker 22s linear infinite;white-space:nowrap;
+}
+.ticker__item{
+  font-family:var(--display);font-size:.82rem;font-weight:700;
+  color:var(--black);letter-spacing:2px;text-transform:uppercase;
+  padding:0 40px;
+}
+.ticker__dot{color:rgba(0,0,0,.35);margin-right:-32px;}
+@keyframes ticker{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+/* ── SERVICES ────────────────────────────────────────────────── */
+.service-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:2px;margin-top:56px;
+  background:var(--border);
+  border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;
+}
+.service-card{
+  background:var(--card);padding:44px 36px;
+  position:relative;overflow:hidden;
+  transition:background .25s;
+  cursor:default;
+}
+.service-card:hover{background:#1E2530;}
+.service-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--lime);transform:scaleX(0);transform-origin:left;
+  transition:transform .3s ease;
+}
+.service-card:hover::before{transform:scaleX(1);}
+
+.service-card__num{
+  font-family:var(--display);font-size:.72rem;letter-spacing:3px;
+  color:var(--steel);text-transform:uppercase;margin-bottom:20px;
+  display:flex;align-items:center;gap:10px;
+}
+.service-card__num::after{content:'';flex:1;height:1px;background:var(--border);}
+
+.service-card__icon{
+  font-size:3rem;margin-bottom:20px;
+  filter:drop-shadow(0 0 12px rgba(170,255,0,.3));
+  display:block;
+}
+.service-card h3{font-size:1.45rem;margin-bottom:12px;color:var(--white);}
+.service-card p{font-size:.9rem;color:var(--mist);line-height:1.7;}
+
+.service-card__features{
+  list-style:none;margin-top:24px;display:flex;flex-direction:column;gap:10px;
+}
+.service-card__features li{
+  display:flex;align-items:center;gap:10px;
+  font-size:.85rem;color:var(--light);
+}
+.service-card__features li::before{
+  content:'▸';color:var(--lime);font-size:.8rem;flex-shrink:0;
+}
+.service-card__tag{
+  display:inline-block;margin-top:24px;
+  background:var(--lime-dim);color:var(--lime);
+  border:1px solid rgba(170,255,0,.3);
+  font-family:var(--display);font-size:.72rem;
+  letter-spacing:2px;text-transform:uppercase;
+  padding:6px 14px;border-radius:2px;
+}
+
+/* ── STANDARDS ───────────────────────────────────────────────── */
+.standards-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:24px;margin-top:56px;
+}
+.standard-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius);padding:36px 28px;
+  position:relative;overflow:hidden;
+  transition:border-color .25s,transform .25s;
+}
+.standard-card:hover{border-color:var(--lime);transform:translateY(-4px);}
+.standard-card::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--lime),transparent);
+  opacity:0;transition:opacity .3s;
+}
+.standard-card:hover::after{opacity:1;}
+.standard-card__icon{
+  font-size:2.2rem;margin-bottom:20px;
+  filter:drop-shadow(0 0 10px rgba(170,255,0,.25));
+}
+.standard-card h3{font-size:1.2rem;margin-bottom:10px;}
+.standard-card p{font-size:.87rem;color:var(--mist);line-height:1.7;}
+.standard-card__badge{
+  display:inline-block;margin-top:18px;
+  background:transparent;color:var(--lime);
+  font-family:var(--display);font-size:.7rem;letter-spacing:2px;
+  text-transform:uppercase;border-bottom:1px solid var(--lime);
+  padding-bottom:2px;
+}
+
+/* ── STATS STRIP ─────────────────────────────────────────────── */
+.stats-strip{
+  background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:48px 0;
+}
+.stats-inner{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:0;
+}
+.stat-item{
+  text-align:center;padding:24px 16px;
+  border-right:1px solid var(--border);
+}
+.stat-item:last-child{border-right:none;}
+.stat-item__val{
+  font-family:var(--display);font-size:2rem;font-weight:700;
+  color:var(--lime);line-height:1;
+  text-shadow:0 0 20px var(--lime-glow);
+}
+.stat-item__label{
+  font-size:.72rem;text-transform:uppercase;letter-spacing:2px;
+  color:var(--mist);margin-top:8px;
+}
+
+/* ── BOOKING ─────────────────────────────────────────────────── */
+.booking-wrap{
+  display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:start;
+  margin-top:56px;
+}
+.booking-left h3{font-size:1.6rem;margin-bottom:16px;}
+.booking-left p{color:var(--mist);line-height:1.75;font-size:.93rem;}
+
+.booking-specs{margin-top:32px;display:flex;flex-direction:column;gap:0;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.spec-row{
+  display:flex;align-items:center;gap:16px;
+  padding:16px 20px;border-bottom:1px solid var(--border);
+  background:var(--surface);transition:background .2s;
+}
+.spec-row:last-child{border-bottom:none;}
+.spec-row:hover{background:var(--card);}
+.spec-icon{font-size:1.3rem;width:36px;text-align:center;flex-shrink:0;}
+.spec-text strong{display:block;font-family:var(--display);font-size:.82rem;letter-spacing:1px;text-transform:uppercase;color:var(--white);}
+.spec-text span{font-size:.82rem;color:var(--mist);}
+
+.booking-form{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius);padding:40px 36px;
+  box-shadow:0 8px 64px rgba(0,0,0,.5);
+  position:relative;overflow:hidden;
+}
+.booking-form::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,transparent,var(--lime),transparent);
+}
+.booking-form h3{font-size:1.5rem;margin-bottom:28px;color:var(--white);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+
+.fgroup{margin-bottom:18px;}
+.fgroup label{
+  display:block;font-family:var(--display);font-size:.75rem;
+  font-weight:600;letter-spacing:2px;text-transform:uppercase;
+  color:var(--mist);margin-bottom:8px;
+}
+.fgroup input,
+.fgroup select,
+.fgroup textarea{
+  width:100%;padding:14px 16px;
+  background:var(--card);
+  border:1.5px solid var(--border);border-radius:4px;
+  font-family:var(--body);font-size:.93rem;color:var(--white);
+  transition:border-color .18s,box-shadow .18s;
+  appearance:none;-webkit-appearance:none;resize:vertical;
+}
+.fgroup input::placeholder,
+.fgroup textarea::placeholder{color:var(--steel);}
+.fgroup input:focus,
+.fgroup select:focus,
+.fgroup textarea:focus{
+  outline:none;border-color:var(--lime);
+  box-shadow:0 0 0 3px rgba(170,255,0,.12);
+}
+.fgroup option{background:var(--card);}
+.select-wrap{position:relative;}
+.select-wrap::after{
+  content:'▾';position:absolute;right:16px;top:50%;transform:translateY(-50%);
+  color:var(--mist);pointer-events:none;
+}
+
+/* WhatsApp dev note */
+.dev-note{
+  background:rgba(37,211,102,.07);border:1px solid rgba(37,211,102,.2);
+  border-radius:6px;padding:14px 18px;margin-top:16px;
+  font-size:.78rem;color:rgba(37,211,102,.8);line-height:1.65;
+}
+.dev-note code{
+  display:block;background:rgba(0,0,0,.3);border-radius:4px;
+  padding:10px 14px;margin-top:8px;font-size:.74rem;
+  color:rgba(170,255,0,.9);word-break:break-all;
+}
+
+/* ── LOCATION ────────────────────────────────────────────────── */
+.location-wrap{
+  display:grid;grid-template-columns:1.1fr 1.6fr;gap:56px;align-items:start;
+  margin-top:56px;
+}
+.location-details{display:flex;flex-direction:column;gap:16px;}
+.detail-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius);padding:20px 24px;
+  display:flex;align-items:flex-start;gap:16px;
+  transition:border-color .2s;
+}
+.detail-card:hover{border-color:var(--lime);}
+.detail-icon{font-size:1.4rem;flex-shrink:0;margin-top:2px;}
+.detail-text strong{
+  display:block;font-family:var(--display);font-size:.75rem;
+  letter-spacing:2px;text-transform:uppercase;color:var(--lime);margin-bottom:4px;
+}
+.detail-text span{font-size:.9rem;color:var(--light);}
+.detail-text a{color:var(--lime);}
+
+.map-container{
+  border-radius:var(--radius);overflow:hidden;
+  border:1px solid var(--border);
+  box-shadow:0 0 64px rgba(170,255,0,.06);
+  position:relative;
+}
+.map-container::before{
+  content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
+  box-shadow:inset 0 0 0 1px rgba(170,255,0,.15);border-radius:var(--radius);
+}
+.map-container iframe{display:block;width:100%;height:400px;border:none;filter:grayscale(1) invert(1) contrast(.85) brightness(.7);}
+
+/* ── FOOTER ──────────────────────────────────────────────────── */
+footer{
+  background:var(--dark);border-top:1px solid var(--border);
+  padding:56px 0 32px;
+}
+.footer-grid{
+  display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;
+  padding-bottom:48px;border-bottom:1px solid var(--border);
+}
+.footer-brand .nav__logo{font-size:1.7rem;margin-bottom:16px;}
+.footer-brand p{font-size:.87rem;color:var(--mist);line-height:1.7;max-width:280px;}
+.footer-col h4{
+  font-family:var(--display);font-size:.8rem;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--lime);margin-bottom:18px;
+}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-col ul li a{font-size:.87rem;color:var(--mist);transition:color .15s;}
+.footer-col ul li a:hover{color:var(--lime);}
+.footer-bottom{
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:16px;padding-top:28px;
+}
+.footer-number{
+  font-family:var(--display);font-size:1.5rem;font-weight:700;color:var(--white);
+  letter-spacing:2px;
+}
+.footer-number a{color:inherit;transition:color .15s;}
+.footer-number a:hover{color:var(--lime);}
+.footer-copy{font-size:.78rem;color:var(--steel);}
+
+/* ── FLOATING WA ─────────────────────────────────────────────── */
+.wa-float{
+  position:fixed;bottom:28px;right:28px;z-index:300;
+  display:flex;align-items:center;gap:12px;
+  background:#25D366;color:#fff;border:none;cursor:pointer;
+  padding:14px 22px;border-radius:4px;
+  font-family:var(--display);font-size:.85rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  box-shadow:0 4px 24px rgba(37,211,102,.4);
+  transition:transform .2s,box-shadow .2s;
+}
+.wa-float:hover{transform:translateY(-3px);box-shadow:0 8px 40px rgba(37,211,102,.6);}
+.wa-float svg{width:22px;height:22px;flex-shrink:0;}
+
+/* ── SCROLL REVEAL ───────────────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-left{opacity:0;transform:translateX(-32px);transition:opacity .6s ease,transform .6s ease;}
+.reveal-left.visible{opacity:1;transform:translateX(0);}
+.reveal-right{opacity:0;transform:translateX(32px);transition:opacity .6s ease,transform .6s ease;}
+.reveal-right.visible{opacity:1;transform:translateX(0);}
+.d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}.d4{transition-delay:.4s;}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────── */
+@media(max-width:900px){
+  .booking-wrap,.location-wrap,.footer-grid{grid-template-columns:1fr;}
+  .hero__truck{display:none;}
+  .stats-inner{grid-template-columns:repeat(2,1fr);}
+  .stats-inner .stat-item:nth-child(2){border-right:none;}
+  .stats-inner .stat-item:nth-child(3){border-top:1px solid var(--border);}
+  .form-row{grid-template-columns:1fr;}
+  .footer-bottom{flex-direction:column;text-align:center;}
+}
+@media(max-width:768px){
+  .nav__links{display:none;}
+  .section{padding:64px 0;}
+  .hero__metrics{grid-template-columns:1fr 1fr;max-width:340px;}
+  .hero__metrics .metric:last-child{grid-column:span 2;border-right:none;border-top:1px solid var(--border);}
+}
+@media(max-width:480px){
+  .hero__ctas{flex-direction:column;}
+  .btn{width:100%;justify-content:center;}
+  .service-grid{grid-template-columns:1fr;}
+  .stats-inner{grid-template-columns:1fr 1fr;}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero__scan,.ticker__track{animation:none;}
+  *{transition-duration:.01ms !important;}
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav__inner">
+    <div class="nav__logo">
+      <div class="logo-mark">DD</div>
+      Pro DDM
+    </div>
+    <ul class="nav__links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#standards">Standards</a></li>
+      <li><a href="#booking">Booking</a></li>
+      <li><a href="#facility">Facility</a></li>
+      <li><a href="tel:0719205239">071 920 5239 <span class="nav__badge">24/7</span></a></li>
+    </ul>
+    <a href="#booking" class="btn btn--lime" style="padding:10px 24px;font-size:.82rem;">Priority Service</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero" id="home">
+  <div class="hero__bg"></div>
+  <div class="hero__grid"></div>
+  <div class="hero__scan"></div>
+  <div class="hero__truck"></div>
+  <div class="container">
+    <div class="hero__content">
+      <div class="hero__status">
+        <span class="pulse"></span>
+        Now Accepting Fleet Clients · Malamulele
+      </div>
+      <h1 class="hero__title">
+        <span class="pro">Pro DDM</span><br />Elite Detailing
+      </h1>
+      <div class="hero__rule"></div>
+      <p class="hero__sub">
+        Precision cleaning for Cars, Taxis, and Heavy-Duty Trucks.<br />
+        Industrial-grade results. Zero compromise.
+      </p>
+      <div class="hero__ctas">
+        <a href="#booking" class="btn btn--lime">⚡ Get Priority Service</a>
+        <a href="tel:0719205239" class="btn btn--ghost">📞 Call 24/7</a>
+      </div>
+      <div class="hero__metrics">
+        <div class="metric">
+          <div class="metric__val">24/7</div>
+          <div class="metric__label">Available</div>
+        </div>
+        <div class="metric">
+          <div class="metric__val">3</div>
+          <div class="metric__label">Vehicle Classes</div>
+        </div>
+        <div class="metric">
+          <div class="metric__val">100%</div>
+          <div class="metric__label">Eco-Friendly</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TICKER ── -->
+<div class="ticker">
+  <div class="ticker__track">
+    <span class="ticker__item">Cars</span><span class="ticker__dot">◆</span>
+    <span class="ticker__item">Taxis</span><span class="ticker__dot">◆</span>
+    <span class="ticker__item">Heavy Trucks</span><span class="ticker__dot">◆</span>
+    <span class="ticker__item">Fleet Cleaning</span><span class="ticker__dot">◆</span>
+    <span class="ticker__item">Chassis Wash</span><span class="ticker__dot">◆</span>
+    <span class="ticker__item">Eco Products</span><span class="ticker__dot">◆</span>
+    <span class="ticker__item">24/7 Service</span><span class="ticker__dot">◆</span>
+    <span class="ticker__item">Malamulele</span><span class="ticker__dot">◆</span>
+    <!-- duplicate for seamless loop -->
+    <span class="ticker__item">Cars</span><span class="ticker__dot">◆</span>
+    <span class="ticker__item">Taxis</span><span class="ticker__dot">◆</span>
+    <span class="ticker__item">Heavy Trucks</span><span class="ticker__dot">◆</span>
+    <span class="ticker__item">Fleet Cleaning</span><span class="ticker__dot">◆</span>
+    <span class="ticker__item">Chassis Wash</span><span class="ticker__dot">◆</span>
+    <span class="ticker__item">Eco Products</span><span class="ticker__dot">◆</span>
+    <span class="ticker__item">24/7 Service</span><span class="ticker__dot">◆</span>
+    <span class="ticker__item">Malamulele</span><span class="ticker__dot">◆</span>
+  </div>
+</div>
+
+<!-- ── SERVICES ── -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="eyebrow reveal">Service Categories</div>
+    <h2 class="reveal">Three Classes.<br />One Standard — <span style="color:var(--lime)">Flawless.</span></h2>
+    <div class="service-grid">
+
+      <div class="service-card reveal">
+        <div class="service-card__num">01</div>
+        <span class="service-card__icon">🚗</span>
+        <h3>Passenger Car Detailing & Shine</h3>
+        <p>From compact sedans to executive SUVs — every surface cleaned, polished, and protected to showroom standard.</p>
+        <ul class="service-card__features">
+          <li>Full interior vacuum & wipe-down</li>
+          <li>Hand wash + clay bar decontamination</li>
+          <li>Window polish & streak-free glass</li>
+          <li>Tyre dressing & rim clean</li>
+          <li>Dashboard conditioning</li>
+        </ul>
+        <span class="service-card__tag">Cars & SUVs</span>
+      </div>
+
+      <div class="service-card reveal d1">
+        <div class="service-card__num">02</div>
+        <span class="service-card__icon">🚐</span>
+        <h3>Taxi: Efficient Turnaround Wash</h3>
+        <p>Built for operators who can't afford downtime. Fast, thorough, and professional — your taxi back on the road, cleaner than ever.</p>
+        <ul class="service-card__features">
+          <li>High-pressure exterior rinse</li>
+          <li>Passenger interior deep clean</li>
+          <li>Seat & floor sanitisation</li>
+          <li>Rapid turnaround guaranteed</li>
+          <li>Fleet booking available</li>
+        </ul>
+        <span class="service-card__tag">Minibus Taxis</span>
+      </div>
+
+      <div class="service-card reveal d2">
+        <div class="service-card__num">03</div>
+        <span class="service-card__icon">🚛</span>
+        <h3>Heavy-Duty Trucks: Industrial Wash & Chassis Clean</h3>
+        <p>Long-haul trucks, horse-and-trailer rigs, flatbeds — our industrial-grade wash systems tackle road grime, grease, and mud at scale.</p>
+        <ul class="service-card__features">
+          <li>High-volume pressure wash system</li>
+          <li>Full chassis & underbody clean</li>
+          <li>Cab interior detail</li>
+          <li>Engine bay degreasing</li>
+          <li>Rust-inhibitor treatment available</li>
+        </ul>
+        <span class="service-card__tag">Trucks & Heavy Fleet</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS STRIP ── -->
+<div class="stats-strip">
+  <div class="container">
+    <div class="stats-inner">
+      <div class="stat-item reveal">
+        <div class="stat-item__val">24/7</div>
+        <div class="stat-item__label">Hours of Operation</div>
+      </div>
+      <div class="stat-item reveal d1">
+        <div class="stat-item__val">3+</div>
+        <div class="stat-item__label">Vehicle Classes Served</div>
+      </div>
+      <div class="stat-item reveal d2">
+        <div class="stat-item__val">100%</div>
+        <div class="stat-item__label">Eco-Safe Products</div>
+      </div>
+      <div class="stat-item reveal d3">
+        <div class="stat-item__val">071</div>
+        <div class="stat-item__label">920 5239 — Call Us Now</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── OUR STANDARDS ── -->
+<section class="section" id="standards" style="background:var(--surface);">
+  <div class="container">
+    <div class="eyebrow reveal">Why Choose Pro DDM</div>
+    <h2 class="reveal">Our Standards Are<br /><span style="color:var(--lime)">Non-Negotiable.</span></h2>
+    <div class="standards-grid">
+
+      <div class="standard-card reveal">
+        <div class="standard-card__icon">⚡</div>
+        <h3>24/7 Availability</h3>
+        <p>Fleet operations don't stop at sundown — and neither do we. Book a wash any hour, any day, including weekends and public holidays.</p>
+        <span class="standard-card__badge">Always On</span>
+      </div>
+
+      <div class="standard-card reveal d1">
+        <div class="standard-card__icon">🌿</div>
+        <h3>Eco-Friendly Products</h3>
+        <p>We use biodegradable, water-efficient cleaning agents that protect your vehicle's surfaces and the environment simultaneously.</p>
+        <span class="standard-card__badge">Green Certified</span>
+      </div>
+
+      <div class="standard-card reveal d2">
+        <div class="standard-card__icon">🔬</div>
+        <h3>Advanced Vehicle Care</h3>
+        <p>From paint-safe clay bars to chassis rust inhibitors, our techniques are sourced from professional detailing science — not guesswork.</p>
+        <span class="standard-card__badge">Pro Grade</span>
+      </div>
+
+      <div class="standard-card reveal d3">
+        <div class="standard-card__icon">🛡️</div>
+        <h3>Guaranteed Results</h3>
+        <p>If you're not satisfied, we redo it. No arguments, no excuses. Your vehicle leaves Pro DDM looking its absolute best — guaranteed.</p>
+        <span class="standard-card__badge">Zero Risk</span>
+      </div>
+
+      <div class="standard-card reveal d1">
+        <div class="standard-card__icon">🚛</div>
+        <h3>Heavy Fleet Specialists</h3>
+        <p>Most car washes turn away trucks. We built our facility to handle them — with wide-access bays, pressure rigs, and trained crew.</p>
+        <span class="standard-card__badge">Truck Ready</span>
+      </div>
+
+      <div class="standard-card reveal d2">
+        <div class="standard-card__icon">📱</div>
+        <h3>Instant WhatsApp Booking</h3>
+        <p>No queues, no phone trees. Send your booking details on WhatsApp and our team confirms within minutes, around the clock.</p>
+        <span class="standard-card__badge">Fast Confirm</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── BOOKING ── -->
+<section class="section" id="booking">
+  <div class="container">
+    <div class="eyebrow reveal">Advanced Booking Hub</div>
+    <h2 class="reveal">Request <span style="color:var(--lime)">Priority Service</span></h2>
+    <div class="booking-wrap">
+
+      <div class="booking-left reveal-left">
+        <h3>How Priority Booking Works</h3>
+        <p>Submit your request below and we dispatch a confirmation to your WhatsApp within minutes. For trucks and fleet clients, we schedule dedicated bay time — no waiting, no overlap.</p>
+        <div class="booking-specs">
+          <div class="spec-row">
+            <div class="spec-icon">📋</div>
+            <div class="spec-text">
+              <strong>Fill the Form</strong>
+              <span>Vehicle type, location, and any special requirements</span>
+            </div>
+          </div>
+          <div class="spec-row">
+            <div class="spec-icon">💬</div>
+            <div class="spec-text">
+              <strong>WhatsApp Confirmation</strong>
+              <span>We confirm your slot on 071 920 5239 within minutes</span>
+            </div>
+          </div>
+          <div class="spec-row">
+            <div class="spec-icon">🚗</div>
+            <div class="spec-text">
+              <strong>Arrive or Request Pickup</strong>
+              <span>Drive in or use our pickup/drop-off service</span>
+            </div>
+          </div>
+          <div class="spec-row">
+            <div class="spec-icon">✅</div>
+            <div class="spec-text">
+              <strong>Collect Your Vehicle</strong>
+              <span>Spotless, detailed, and ready to roll</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="booking-form reveal-right">
+        <h3>Booking Request</h3>
+
+        <div class="form-row">
+          <div class="fgroup">
+            <label for="owner">Vehicle Owner Name</label>
+            <input type="text" id="owner" placeholder="e.g. David Maluleke" />
+          </div>
+          <div class="fgroup">
+            <label for="bphone">Phone Number</label>
+            <input type="tel" id="bphone" placeholder="e.g. 071 234 5678" />
+          </div>
+        </div>
+
+        <div class="fgroup">
+          <label for="vtype">Vehicle Type</label>
+          <div class="select-wrap">
+            <select id="vtype">
+              <option value="">— Select Vehicle Type —</option>
+              <option value="Sedan / Passenger Car">Sedan / Passenger Car</option>
+              <option value="SUV / 4x4">SUV / 4x4</option>
+              <option value="Minibus Taxi">Minibus Taxi</option>
+              <option value="Light Delivery Vehicle (LDV)">Light Delivery Vehicle (LDV)</option>
+              <option value="Heavy-Duty Truck">Heavy-Duty Truck</option>
+              <option value="Horse & Trailer Rig">Horse &amp; Trailer Rig</option>
+              <option value="Flatbed / Tipper Truck">Flatbed / Tipper Truck</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="fgroup">
+          <label for="location">Pickup / Drop-off Location</label>
+          <input type="text" id="location" placeholder="e.g. Malamulele Town Centre or our facility" />
+        </div>
+
+        <div class="fgroup">
+          <label for="requirements">Specific Cleaning Requirements</label>
+          <textarea id="requirements" rows="4" placeholder="e.g. Focus on engine bay degreasing, chassis rust treatment, interior deep clean..."></textarea>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════════════
+             ▼▼ WHATSAPP CUSTOM SCRIPT INTEGRATION AREA ▼▼
+             Replace or extend sendPriorityBooking() below with your
+             preferred integration: WhatsApp Business API, webhook,
+             Twilio, or custom backend endpoint.
+             Target WhatsApp: +27 71 920 5239
+             Available form field IDs:
+               #owner       – Vehicle owner name
+               #bphone      – Phone number
+               #vtype       – Vehicle type (dropdown)
+               #location    – Pickup/drop-off location
+               #requirements – Specific cleaning requirements (textarea)
+        ══════════════════════════════════════════════════════════ -->
+        <button class="btn btn--wa" id="bookBtn" onclick="sendPriorityBooking()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Send Priority Booking via WhatsApp
+        </button>
+
+        <div class="dev-note">
+          <strong>📌 Dev Integration Point:</strong> Replace <code>sendPriorityBooking()</code> with your custom API call, webhook, or WhatsApp Business integration. Target: <strong>+27719205239</strong>
+          <code>// Form IDs: #owner · #bphone · #vtype · #location · #requirements</code>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── LOCATION / MAP ── -->
+<section class="section" id="facility" style="background:var(--surface);">
+  <div class="container">
+    <div class="eyebrow reveal">Visit Our Facility</div>
+    <h2 class="reveal">Find <span style="color:var(--lime)">Pro DDM</span></h2>
+    <div class="location-wrap">
+      <div class="location-details reveal-left">
+
+        <div class="detail-card">
+          <div class="detail-icon">📍</div>
+          <div class="detail-text">
+            <strong>Facility Address</strong>
+            <!--  ▼▼ REPLACE WITH EXACT ADDRESS ▼▼  -->
+            <span>[Your Street Address Here]<br />Malamulele, Limpopo, 0982<br />South Africa</span>
+          </div>
+        </div>
+
+        <div class="detail-card">
+          <div class="detail-icon">📞</div>
+          <div class="detail-text">
+            <strong>Direct Line</strong>
+            <span><a href="tel:0719205239">071 920 5239</a></span>
+          </div>
+        </div>
+
+        <div class="detail-card">
+          <div class="detail-icon">🕐</div>
+          <div class="detail-text">
+            <strong>Operating Hours</strong>
+            <span>24 Hours · 7 Days a Week<br />Including Public Holidays</span>
+          </div>
+        </div>
+
+        <div class="detail-card">
+          <div class="detail-icon">💬</div>
+          <div class="detail-text">
+            <strong>WhatsApp Booking</strong>
+            <span><a href="https://wa.me/27719205239" target="_blank" rel="noopener">+27 71 920 5239 — Chat Now</a></span>
+          </div>
+        </div>
+
+        <div class="detail-card">
+          <div class="detail-icon">🚛</div>
+          <div class="detail-text">
+            <strong>Truck Access</strong>
+            <span>Wide-bay facility — Heavy vehicles<br />and full rigs welcome</span>
+          </div>
+        </div>
+
+        <a href="https://maps.google.com/?q=Malamulele,+Limpopo,+South+Africa" target="_blank" rel="noopener" class="btn btn--lime" style="width:100%;justify-content:center;margin-top:8px;">🗺️ Get Directions</a>
+      </div>
+
+      <div class="map-container reveal-right">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58877.2!2d30.6543!3d-23.1054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec5e71b9c5ab1b5%3A0x6c3b9e8b123d4567!2sMalamulele%2C%20Limpopo%2C%20South%20Africa!5e0!3m2!1sen!2sza!4v1700000000000!5m2!1sen!2sza"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Pro DDM Car Wash Location – Malamulele, Limpopo">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav__logo" style="font-size:1.7rem;margin-bottom:16px;">
+          <div class="logo-mark">DD</div>
+          Pro DDM
+        </div>
+        <p>Elite fleet and vehicle detailing in Malamulele, Limpopo. Industrial-grade results for cars, taxis, and heavy trucks — 24 hours a day.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Passenger Car Detailing</a></li>
+          <li><a href="#services">Taxi Turnaround Wash</a></li>
+          <li><a href="#services">Heavy Truck Industrial Wash</a></li>
+          <li><a href="#services">Chassis Cleaning</a></li>
+          <li><a href="#services">Fleet Contracts</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#standards">Our Standards</a></li>
+          <li><a href="#booking">Priority Booking</a></li>
+          <li><a href="#facility">Find Us</a></li>
+          <li><a href="tel:0719205239">Call 24/7</a></li>
+          <li><a href="https://wa.me/27719205239" target="_blank" rel="noopener">WhatsApp Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>
+        <div style="font-family:var(--display);font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--mist);margin-bottom:6px;">Call or WhatsApp 24/7</div>
+        <div class="footer-number"><a href="tel:0719205239">071 920 5239</a></div>
+      </div>
+      <div class="footer-copy">
+        © 2025 Pro DDM Car Wash · Malamulele, Limpopo<br />Elite Fleet & Vehicle Detailing
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ── FLOATING WA ── -->
+<a href="https://wa.me/27719205239?text=Hello%20Pro%20DDM%2C%20I%27d%20like%20to%20request%20priority%20service!" target="_blank" rel="noopener" class="wa-float">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  Priority WhatsApp
+</a>
+
+<!-- ── SCRIPTS ── -->
+<script>
+/* ── Scroll Reveal ──────────────────────────────────────────── */
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => obs.observe(el));
+
+/* ══════════════════════════════════════════════════════════════
+   ▼▼ WHATSAPP PRIORITY BOOKING FUNCTION ▼▼
+   Replace or extend this function with your custom integration.
+   WhatsApp Business Target: +27719205239
+══════════════════════════════════════════════════════════════ */
+function sendPriorityBooking() {
+  const owner    = document.getElementById('owner').value.trim();
+  const phone    = document.getElementById('bphone').value.trim();
+  const vtype    = document.getElementById('vtype').value;
+  const location = document.getElementById('location').value.trim();
+  const reqs     = document.getElementById('requirements').value.trim();
+
+  if(!owner || !phone || !vtype || !location) {
+    alert('Please fill in all required fields before submitting.');
+    return;
+  }
+
+  const msg =
+    `🚛 *PRO DDM — PRIORITY BOOKING REQUEST*\n` +
+    `━━━━━━━━━━━━━━━━━━━━━━\n` +
+    `👤 *Owner:* ${owner}\n` +
+    `📞 *Phone:* ${phone}\n` +
+    `🚗 *Vehicle Type:* ${vtype}\n` +
+    `📍 *Location:* ${location}\n` +
+    `🔧 *Requirements:* ${reqs || 'Standard service'}\n` +
+    `━━━━━━━━━━━━━━━━━━━━━━\n` +
+    `Please confirm my priority slot. Thank you!`;
+
+  const encoded = encodeURIComponent(msg);
+  const waNumber = '27719205239';
+  window.open(`https://wa.me/${waNumber}?text=${encoded}`, '_blank');
+}
+
+/* ── Active nav highlight ────────────────────────────────────── */
+const sections = document.querySelectorAll('section[id]');
+const links    = document.querySelectorAll('.nav__links a');
+window.addEventListener('scroll', () => {
+  let cur = '';
+  sections.forEach(s => { if(window.scrollY >= s.offsetTop - 80) cur = s.id; });
+  links.forEach(a => { a.style.color = a.getAttribute('href') === `#${cur}` ? 'var(--lime)' : ''; });
+});
+</script>
+</body>
+</html>
